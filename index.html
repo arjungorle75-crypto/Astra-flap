@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#62b8ec">
+  <meta name="description" content="A friendly, tap-to-fly arcade game starring Astra. Dodge the pipes and beat your best score.">
+  <title>Astra's Sky Hop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">✦</span>
+        <div><p class="eyebrow">A little sky adventure</p><h1>Astra's Sky Hop</h1></div>
+      </div>
+      <div class="top-copy">Tap to flap. Fly through the pipes!</div>
+    </header>
+
+    <section class="layout" aria-label="Astra's Sky Hop game">
+      <div class="game-card">
+        <div class="scorebar">
+          <div class="score-pill"><span class="score-label">SCORE</span><strong id="score">0</strong></div>
+          <div class="best-pill"><span>BEST</span><strong id="best">0</strong></div>
+        </div>
+        <div class="game-stage" id="gameStage">
+          <canvas id="game" aria-label="Game area. Tap, click, or press Space to flap and avoid the pipes."></canvas>
+          <div class="dialogue-badge" id="dialogueBadge" aria-live="polite">Dialogue 1</div>
+          <div class="overlay" id="overlay">
+            <section class="overlay-card" aria-labelledby="overlayTitle">
+              <div class="overlay-sparkle" id="overlayIcon" aria-hidden="true">✦</div>
+              <p class="overlay-kicker" id="overlayKicker">READY, BIRDIE?</p>
+              <h2 id="overlayTitle">Let's fly!</h2>
+              <p class="overlay-copy" id="overlayCopy">Tap, click, or press Space to flap and float between the pipes.</p>
+              <div class="game-over-dialogue" id="gameOverDialogue" hidden>
+                <span class="dialogue-tag">DIALOGUE 2</span>
+                <span>Crash landing! Let's try again.</span>
+              </div>
+              <button class="primary-button" id="startButton" type="button">Start Game</button>
+              <div class="hint"><kbd>SPACE</kbd><span>or tap anywhere in the sky</span></div>
+            </section>
+          </div>
+        </div>
+        <div class="game-tools">
+          <span class="live-note" id="liveNote">Keep an eye on the gap ahead.</span>
+          <button class="restart-button" id="restartButton" type="button" aria-label="Restart game">↻ <span>Restart</span></button>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <section class="side-card character-card">
+          <div class="character-star" aria-hidden="true">✦</div>
+          <p class="eyebrow">Your co-pilot</p>
+          <h2>Meet Astra</h2>
+          <p>One cheerful flapper, a bright blue sky, and a whole lot of pipes to dodge.</p>
+          <div class="sound-chip"><span class="sound-dot"></span> Your dialogue clips are on</div>
+        </section>
+        <section class="side-card controls-card">
+          <h2>How to play</h2>
+          <div class="control-row"><span class="control-icon">↥</span><span><strong>Flap</strong><small>Tap, click, or Space</small></span></div>
+          <div class="control-row"><span class="control-icon">◎</span><span><strong>Pass the pipes</strong><small>Score +1 for each pair</small></span></div>
+          <div class="control-row"><span class="control-icon danger">!</span><span><strong>Watch your wings</strong><small>Pipe or ground ends the run</small></span></div>
+        </section>
+        <div class="share-note"><span aria-hidden="true">☁</span><p>Take turns, compare scores, and see who can fly the farthest.</p></div>
+      </aside>
+    </section>
+    <footer>Made for one more try <span aria-hidden="true">♥</span></footer>
+  </main>
+
+  <audio id="flapAudio" preload="auto" src="assets/dialogue-flap.mp3"></audio>
+  <audio id="gameOverAudio" preload="auto" src="assets/dialogue-game-over.mp3"></audio>
+</body>
+</html>
