@@ -27,7 +27,7 @@
   const PIPE_WIDTH = 86;
   const PIPE_SPACING = 270;
   const face = new Image();
-  face.src = 'assets/bird-face.png';
+  face.src = bird-face.png';
 
   let state = 'ready';
   let bird = { x: BIRD_X, y: 375, velocity: 0, flapPulse: 0 };
